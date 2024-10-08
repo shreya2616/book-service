@@ -28,4 +28,9 @@ public class BookController {
     public Book addBook(@RequestBody Book book){
         return bookDao.save(book);
     }
+
+    @DeleteMapping("/books/{id}")
+    public void deleteBook(@PathVariable("id") int id){
+        bookDao.deleteById(id);
+    }
 }
